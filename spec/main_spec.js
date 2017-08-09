@@ -6,26 +6,17 @@ var sinonChai = require("sinon-chai");
 var expect = chai.expect;
 chai.use(sinonChai);
 
-var main = require("../lib/main.js");
+var beersong = require("../lib/beersong.js");
 
 
 describe("测试描述", function(){
     sinon.spy(console, 'log');
 
-    it("测试用例1", function(){
-
-        var result = main();
-        var expect_string = '';
+    it("return common lyric while num between 3 ~ 99", function(){
+        let num = 99;
+        let lyric = beersong(num);
+        let expect_string = '99 bottles of beer on the wall, 99 bottles of beer.\nTake one down and pass it around, 98 bottles of beer on the wall.';
         
-        expect(expect_string).to.equal(result);
-    });
-
-    it("测试用例2", function(){
-
-        main();
-        var result = _.flatten(console.log.args).join("\n");
-        var expect_string = '';
-
-        expect(expect_string).to.equal(result);
+        expect(lyric).to.equal(expect_string);
     });
 });
