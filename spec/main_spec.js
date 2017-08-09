@@ -19,4 +19,12 @@ describe("测试描述", function(){
         
         expect(lyric).to.equal(expect_string);
     });
+
+    it("return 2 bottles lyric while num equal 2", function(){
+        let num = 2;
+        let lyric = beersong(num);
+        let expect_string = '2 bottles of beer on the wall, 2 bottles of beer.\nTake one down and pass it around, 1 bottle of beer on the wall.';
+
+        expect(lyric).to.equal(expect_string);
+    });
 });
