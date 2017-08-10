@@ -17,9 +17,10 @@
     npm test
     
 执行index.js
-    
-    npm run-script index
-    
+输入数字得到对应的歌词
+
+    node index
+
     
 ## 细节
     
