@@ -12,36 +12,15 @@ var beersong = require("../lib/beersong");
 describe("测试描述", function () {
   sinon.spy(console, 'log');
 
-  /*it("return beersong lyrics", function(){
+  it("add lyric while num equal 0", function () {
+    let num = 0;
+    let lyric = beersong(num);
 
-   var result = main();
-   var expect_string = '';
-
-   expect(expect_string).to.equal(result);
-   });
-   */
-  /* it("add common lyric while num between 3 ~ 99", function(){
-
-   let num = 99;
-   let lyric = beersong(num);
-   let expect_string = '99 bottles of beer on the wall, 99 bottles of beer.\n' +
-   'Take one down and pass it around, 98 bottles of beer on the wall.\n';
-
-   expect(lyric).to.equal(expect_string);
-   });*/
-
-  /* it("add lyric while num equal 2", function(){
-
-   let num = 2;
-   let lyric = beersong(num);
-   let expect_string = '2 bottles of beer on the wall, 2 bottles of beer.\n' +
-   'Take one down and pass it around, 1 bottle of beer on the wall.\n';
-
-   expect(lyric).to.equal(expect_string);
-   });*/
+    expect(lyric).to.equal(`No more bottles of beer on the wall, no more bottles of beer.
+Go to the store and buy some more, 99 bottles of beer on the wall.`);
+  });
 
   it("add lyric while num equal 1", function () {
-
     let num = 1;
     let lyric = beersong(num);
 
@@ -51,12 +30,34 @@ No more bottles of beer on the wall, no more bottles of beer.
 Go to the store and buy some more, 99 bottles of beer on the wall.`);
   });
 
-  it("add lyric while num equal 0", function () {
-    let num = 0;
+  it("add lyric while num equal 2", function () {
+    let num = 2;
     let lyric = beersong(num);
 
-    expect(lyric).to.equal(`No more bottles of beer on the wall, no more bottles of beer.
+    expect(lyric).to.equal(`2 bottles of beer on the wall, 2 bottles of beer.
+Take one down and pass it around, 1 bottle of beer on the wall.
+1 bottle of beer on the wall, 1 bottle of beer.
+Take one down and pass it around, no more bottles of beer on the wall.
+No more bottles of beer on the wall, no more bottles of beer.
 Go to the store and buy some more, 99 bottles of beer on the wall.`);
   });
+
+  xit("add common lyric while num between 3 ~ 99", function () {
+    let num = 99;
+    let lyric = beersong(num);
+    let expect_string = '99 bottles of beer on the wall, 99 bottles of beer.\n' +
+      'Take one down and pass it around, 98 bottles of beer on the wall.\n';
+
+    expect(lyric).to.equal(expect_string);
+  });
+
+  xit("return beersong lyrics", function () {
+    let result = main();
+    let expect_string = '';
+
+    expect(expect_string).to.equal(result);
+  });
+
+
 
 });
